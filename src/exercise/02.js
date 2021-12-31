@@ -43,7 +43,7 @@ function useAsync(asyncCallback, initialState, dependencies) {
     dispatch({type: 'pending'})
     promise.then(
       data => dispatch({type: 'resolved', data}),
-      error => dispatch({type: 'error', error}),
+      error => dispatch({type: 'rejected', error}),
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
